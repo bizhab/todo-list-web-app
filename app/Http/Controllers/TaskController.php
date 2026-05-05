@@ -19,4 +19,16 @@ class TaskController extends Controller
 
         return back()->with('success', 'Task baru berhasil ditambahkan!');
     }
+
+    public function index()
+    {
+        $tasks = Task::latest()->get(); // Mengambil semua task dari yang terbaru
+        return view('tasks.index', compact('tasks'));
+    }
+
+    public function destroy(Task $task)
+    {
+        $task->delete(); // Menghapus task
+        return back()->with('success', 'Task berhasil dihapus!');
+    }
 }
