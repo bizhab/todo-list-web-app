@@ -10,7 +10,7 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|string|min:3|max:255',
         ]);
 
         Task::create([

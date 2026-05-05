@@ -17,7 +17,8 @@
     <div style="background: #f8f9fa; padding: 15px; margin-bottom: 20px;">
         <form action="{{ route('tasks.store') }}" method="POST">
             @csrf
-            <input type="text" name="name" placeholder="Ketik tugas baru..." required>
+            <!-- PERBAIKAN: Tambahkan atribut autofocus di bagian paling belakang input -->
+            <input type="text" name="title" placeholder="Ketik tugas baru..." required autofocus>
             <button type="submit">Tambah Task</button>
         </form>
     </div>
